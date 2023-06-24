@@ -3,7 +3,7 @@ const Tour = require('../models/Tours');
 connect=async()=>{
     try{
 
-        await mongoose.connect('mongodb://127.0.0.1:27017/Natours'
+        await mongoose.connect('mongodb+srv://VanToan:toan123456@cluster0.euq2ksk.mongodb.net/natours?retryWrites=true&w=majority'
             
         )
         console.log('sucessfully connected');
