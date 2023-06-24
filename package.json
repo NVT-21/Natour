@@ -29,6 +29,9 @@
     "build": "webpack"
    
   },
+  "engines": {
+    "node": ">=14 <15"
+  },
   "name": "project-natours",
   "version": "1.0.0",
   "main": "server.js",
