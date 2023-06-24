@@ -9,7 +9,7 @@ connect=async()=>{
         console.log('sucessfully connected');
     }
     catch(err){
-        console.log("falies");
+        console.log("Không kết nối được ");
     }
     
 }
