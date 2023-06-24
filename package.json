@@ -23,10 +23,11 @@
     "sharp": "^0.32.1"
   },
   "scripts": {
+    "start": "node server.js",
     "start:dev": "NODE_ENV=development nodemon --inspect server.js",
     "start:prod": "NODE_ENV=production nodemon --inspect server.js",
-    "build": "webpack",
-    "start": "node server.js"
+    "build": "webpack"
+   
   },
   "name": "project-natours",
   "version": "1.0.0",

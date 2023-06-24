@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 
 
 var cookieParser = require('cookie-parser')
-const port = process.env.Port|| 3000;
+const port = 8000;
 const connect = require('./controllers/connect');
 const router = require('./router/index')
 const exphbs = require('express-handlebars');
