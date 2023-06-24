@@ -1,9 +1,19 @@
 const Tours=require('../models/Tours.js');
 const catchAsync=require('../utils/asyncError.js');
+var myBookings=require('../models/myBooking.js');
+const apiFeature=require('../utils/apiFeature.js');
 
 class controllerTours{
     getAllTours=catchAsync(async (req,res,next)=>{
-        const tour=await Tours.find();
+       console.log(req.query)
+        const feature=new apiFeature(Tours.find(),req.query)
+        .filter()
+        .sort()
+        .fields()
+        .page()
+       
+        const tour=await feature.query
+        
        res.json(
            {   
                tour:tour
@@ -47,6 +57,12 @@ class controllerTours{
 
 
     }
+    addTourBooking=catchAsync(async(req,res,next)=>{
+        var tour = await Tours.findOne({ slug: req.params.slug });
+        tour = tour.toObject();
+        const tourBooking=await myBookings.create(tour)
+        res.status(200).send(tourBooking);
+    })
 
     }
 
